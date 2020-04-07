@@ -16,8 +16,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uge-dL-XUg">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" textLabel="vso-bd-Jrm" detailTextLabel="kUg-4Z-22G" style="IBUITableViewCellStyleSubtitle" id="PeN-FB-etv">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PeN-FB-etv" id="8yA-3e-3lp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vso-bd-Jrm">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kUg-4Z-22G">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -30,6 +56,9 @@
                         <viewLayoutGuide key="safeArea" id="4Ka-ys-haf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Users" id="DXq-pa-YIS"/>
+                    <connections>
+                        <outlet property="tableView" destination="uge-dL-XUg" id="s4a-LJ-FOE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ua-x4-3yU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,7 +163,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DvH-3G-e0w"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Create" selectedImage="pencil.and.ellipsis.rectangle" catalog="system" id="ftW-iT-EPe"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="pencil.and.ellipsis.rectangle" catalog="system" id="ftW-iT-EPe"/>
                     <connections>
                         <outlet property="balanceTextField" destination="teD-0B-xZL" id="uQ5-bZ-Ebi"/>
                         <outlet property="nameTextField" destination="XiN-uk-9lg" id="fDR-Nq-AtK"/>
@@ -167,7 +196,7 @@
         <scene sceneID="0cf-Mc-ar7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vpc-8Q-JiH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Transactions" selectedImage="arrow.up.arrow.down.circle" catalog="system" id="Nro-Ur-bat"/>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="arrow.up.arrow.down" catalog="system" id="Nro-Ur-bat"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ADY-2I-4M1">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -186,7 +215,7 @@
         <scene sceneID="jJj-P4-CHv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVA-Nl-B7H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" selectedImage="person" catalog="system" id="pSe-rb-hij"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person" catalog="system" id="pSe-rb-hij"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="GTH-eE-7hQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -203,7 +232,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.up.arrow.down.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
         <image name="money" width="800" height="800"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="person" catalog="system" width="128" height="117"/>
