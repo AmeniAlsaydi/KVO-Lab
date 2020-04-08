@@ -13,28 +13,24 @@ class UsersViewController: UIViewController {
   
     private var users = [User]() { // starts off as an empty table view
         didSet {
-            tableView.reloadData()
+            tableView.reloadData() // break here
         }
     }
     
-    private var usersListObservation: NSKeyValueObservation? // remember to invalidate when off screen
+    private var usersListObservation: NSKeyValueObservation? // remember to invalidate when view is nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUsersObservation()
-
-        // Do any additional setup after loading the view.
+        
+        configureUsersObservation() // if the view isnt loaded first the observer is not configured. ??
         
         tableView.dataSource = self
         tableView.delegate = self
         
         
     }
+    
 
-//    override func viewDidDisappear(_ animated: Bool) {
-//
-//        usersListObservation?.invalidate()
-//    }
     
     private func configureUsersObservation() {
         usersListObservation = Accounts.shared.observe(\.users, options: [.new, .old], changeHandler: { [weak self] (account, change) in
@@ -62,6 +58,15 @@ extension UsersViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let transactionVC = storyboard?.instantiateViewController(identifier: "TransactionViewController") as? TransactionViewController else {
+                   // developer error
+                   fatalError("could not downcast to TransactionViewController")
+               }
+        transactionVC.currentIndex = indexPath.row
+        navigationController?.pushViewController(transactionVC, animated: true)
+    }
     
 }
 

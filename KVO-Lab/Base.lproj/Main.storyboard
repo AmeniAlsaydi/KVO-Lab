@@ -64,6 +64,69 @@
             </objects>
             <point key="canvasLocation" x="1386.9565217391305" y="367.63392857142856"/>
         </scene>
+        <!--Transaction View Controller-->
+        <scene sceneID="meb-se-zjH">
+            <objects>
+                <viewController storyboardIdentifier="TransactionViewController" id="c2E-H0-lc6" customClass="TransactionViewController" customModule="KVO_Lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N5Y-t1-cdD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the amount below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsW-Xd-IK5">
+                                <rect key="frame" x="20" y="144" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kuw-tG-W4h">
+                                <rect key="frame" x="145" y="185" width="124" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-DN-bqI">
+                                <rect key="frame" x="83" y="259" width="248" height="32"/>
+                                <segments>
+                                    <segment title="Request"/>
+                                    <segment title="Deposit"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="c2E-H0-lc6" eventType="valueChanged" id="lyy-CB-aJQ"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPB-Eq-jtR">
+                                <rect key="frame" x="103.5" y="330" width="207" height="30"/>
+                                <state key="normal" title="Complete Transaction"/>
+                                <connections>
+                                    <action selector="completeTransactionPressed:" destination="c2E-H0-lc6" eventType="touchUpInside" id="M6i-3a-KOa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oPB-Eq-jtR" firstAttribute="top" secondItem="gXf-DN-bqI" secondAttribute="bottom" constant="40" id="0zS-XV-C6u"/>
+                            <constraint firstItem="MsW-Xd-IK5" firstAttribute="top" secondItem="x7T-oQ-5kh" secondAttribute="top" constant="100" id="2Tq-JA-ES0"/>
+                            <constraint firstItem="MsW-Xd-IK5" firstAttribute="leading" secondItem="x7T-oQ-5kh" secondAttribute="leading" constant="20" id="5gX-aL-JG6"/>
+                            <constraint firstItem="oPB-Eq-jtR" firstAttribute="centerX" secondItem="N5Y-t1-cdD" secondAttribute="centerX" id="7zY-2Q-XAN"/>
+                            <constraint firstItem="kuw-tG-W4h" firstAttribute="top" secondItem="MsW-Xd-IK5" secondAttribute="bottom" constant="20" id="FAb-b0-Hhy"/>
+                            <constraint firstItem="oPB-Eq-jtR" firstAttribute="width" secondItem="N5Y-t1-cdD" secondAttribute="width" multiplier="0.5" id="Jac-Jp-mTC"/>
+                            <constraint firstItem="gXf-DN-bqI" firstAttribute="centerX" secondItem="N5Y-t1-cdD" secondAttribute="centerX" id="bRd-6i-g7W"/>
+                            <constraint firstItem="gXf-DN-bqI" firstAttribute="top" secondItem="kuw-tG-W4h" secondAttribute="bottom" constant="40" id="dRj-gb-bDh"/>
+                            <constraint firstItem="kuw-tG-W4h" firstAttribute="width" secondItem="N5Y-t1-cdD" secondAttribute="width" multiplier="0.3" id="dTk-xK-Txc"/>
+                            <constraint firstItem="kuw-tG-W4h" firstAttribute="centerX" secondItem="N5Y-t1-cdD" secondAttribute="centerX" id="vWb-th-6KE"/>
+                            <constraint firstItem="gXf-DN-bqI" firstAttribute="width" secondItem="N5Y-t1-cdD" secondAttribute="width" multiplier="0.6" id="x9Y-DX-gaQ"/>
+                            <constraint firstItem="x7T-oQ-5kh" firstAttribute="trailing" secondItem="MsW-Xd-IK5" secondAttribute="trailing" constant="20" id="xuR-k1-GTQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x7T-oQ-5kh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3pd-0I-FGW"/>
+                    <connections>
+                        <outlet property="amountTextField" destination="kuw-tG-W4h" id="uAl-ad-y16"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGf-kL-Dbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264" y="369"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="R3D-ze-Z5k">
             <objects>
