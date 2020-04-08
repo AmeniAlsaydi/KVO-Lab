@@ -274,11 +274,11 @@
             </objects>
             <point key="canvasLocation" x="476.81159420289856" y="367.63392857142856"/>
         </scene>
-        <!--User-->
+        <!--Users-->
         <scene sceneID="jJj-P4-CHv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVA-Nl-B7H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" image="person" catalog="system" id="pSe-rb-hij"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="person.3" catalog="system" id="pSe-rb-hij"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="GTH-eE-7hQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -298,6 +298,6 @@
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
         <image name="money" width="800" height="800"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
     </resources>
 </document>

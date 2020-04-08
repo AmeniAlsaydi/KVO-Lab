@@ -12,10 +12,6 @@ import Foundation
      @objc dynamic var accountBalance: Double = 0.0
      @objc dynamic var name: String = ""
     
-//    override init(accountBalance: Double, name: String) {
-//        <#code#>
-//    }
-    
 }
 
 @objc class Accounts: NSObject {

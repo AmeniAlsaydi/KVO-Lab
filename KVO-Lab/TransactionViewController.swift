@@ -22,9 +22,6 @@ class TransactionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
@@ -38,19 +35,21 @@ class TransactionViewController: UIViewController {
         guard let index = currentIndex else { fatalError("no index passed") }
         // change the user array using the passed indexpath.row
         if transactionType == .deposit {
+             print("deposit")
+            // increase balance amount for selected user
             Accounts.shared.users[index].accountBalance += amount //1.0 // this change should trigger the observer
-            // increase account balance amount for selected user
+            // decrease balance amount for last created user
+            Accounts.shared.users.last?.accountBalance -= amount
             
         }
         else {
-            print("ok")
-            // decrease account balance amount for selected user
-            // and maybe decrease balance from the last created user account
+            print("request")
+            // decrease balance amount for selected user
+            Accounts.shared.users[index].accountBalance -= amount //1.0 // this change should trigger the observer
+            // increase balance amount for last created user (aka requesting user)
+            Accounts.shared.users.last?.accountBalance += amount
             
         }
-        
-        
-        
         
     }
     

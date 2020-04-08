@@ -18,19 +18,22 @@ class UsersViewController: UIViewController {
     }
     
     private var usersListObservation: NSKeyValueObservation? // remember to invalidate when view is nil
+    private var balanceObserver: NSKeyValueObservation?
     
+    // force view controller to load:
+    // https://stackoverflow.com/questions/33261776/how-to-load-all-views-in-uitabbarcontroller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
         configureUsersObservation() // if the view isnt loaded first the observer is not configured. ??
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
     }
     
-
+    private func loadData() {
+        users = Accounts.shared.users
+    }
     
     private func configureUsersObservation() {
         usersListObservation = Accounts.shared.observe(\.users, options: [.new, .old], changeHandler: { [weak self] (account, change) in
@@ -53,6 +56,7 @@ extension UsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         let user = users[indexPath.row]
+        
         cell.textLabel?.text = user.name
         cell.detailTextLabel?.text = "$\(user.accountBalance)"
         return cell
