@@ -9,6 +9,7 @@
 import Foundation
 
 @objc class User: NSObject {
+     static var shared = User()
      @objc dynamic var accountBalance: Double = 0.0
      @objc dynamic var name: String = ""
     

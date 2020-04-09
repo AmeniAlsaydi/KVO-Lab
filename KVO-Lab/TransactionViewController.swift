@@ -17,7 +17,7 @@ class TransactionViewController: UIViewController {
     
     @IBOutlet weak var amountTextField: UITextField!
     
-    private var transactionType = TransactionType.deposit
+    private var transactionType = TransactionType.request
     public var currentIndex: Int?
     
     override func viewDidLoad() {
@@ -25,7 +25,12 @@ class TransactionViewController: UIViewController {
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
-        
+        if sender.selectedSegmentIndex == 0 {
+            transactionType = .request
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            transactionType = .deposit
+        }
     }
     
     @IBAction func completeTransactionPressed(_ sender: UIButton) {
@@ -39,7 +44,7 @@ class TransactionViewController: UIViewController {
             // increase balance amount for selected user
             Accounts.shared.users[index].accountBalance += amount //1.0 // this change should trigger the observer
             // decrease balance amount for last created user
-            Accounts.shared.users.last?.accountBalance -= amount
+            //Accounts.shared.users.last?.accountBalance -= amount
             
         }
         else {
@@ -47,9 +52,14 @@ class TransactionViewController: UIViewController {
             // decrease balance amount for selected user
             Accounts.shared.users[index].accountBalance -= amount //1.0 // this change should trigger the observer
             // increase balance amount for last created user (aka requesting user)
-            Accounts.shared.users.last?.accountBalance += amount
+            // Accounts.shared.users.last?.accountBalance += amount
             
         }
+        
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+
         
     }
     

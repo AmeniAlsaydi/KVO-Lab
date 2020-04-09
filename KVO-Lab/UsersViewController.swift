@@ -18,10 +18,11 @@ class UsersViewController: UIViewController {
     }
     
     private var usersListObservation: NSKeyValueObservation? // remember to invalidate when view is nil
-    private var balanceObserver: NSKeyValueObservation?
+    private var balanceObservation: NSKeyValueObservation?
     
     // force view controller to load:
     // https://stackoverflow.com/questions/33261776/how-to-load-all-views-in-uitabbarcontroller
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -56,9 +57,15 @@ extension UsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         let user = users[indexPath.row]
-        
+     
         cell.textLabel?.text = user.name
         cell.detailTextLabel?.text = "$\(user.accountBalance)"
+
+        balanceObservation = Accounts.shared.users[indexPath.row].observe(\.accountBalance, options: .new, changeHandler: { (user, change) in
+            guard let newBalance = change.newValue else {return}
+            cell.detailTextLabel?.text = "$\(newBalance)"
+        })
+        
         return cell
     }
     
@@ -69,6 +76,14 @@ extension UsersViewController: UITableViewDataSource {
                    fatalError("could not downcast to TransactionViewController")
                }
         transactionVC.currentIndex = indexPath.row
+        
+        let user = users[indexPath.row]
+        balanceObservation = user.observe(\.accountBalance, options: [.old, .new], changeHandler: { (user, change) in
+            guard change.newValue != nil else { return }
+            Accounts.shared.users = self.users
+            // tableView.reloadData() // this works too but i think its wrong
+        })
+        
         navigationController?.pushViewController(transactionVC, animated: true)
     }
     

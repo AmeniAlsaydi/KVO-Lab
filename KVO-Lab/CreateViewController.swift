@@ -36,6 +36,9 @@ class CreateViewController: UIViewController {
         
         Accounts.shared.users.append(user) // this update should be observed by the other VCs
         
+        nameTextField.text = ""
+        balanceTextField.text = ""
+        
     }
     
 }

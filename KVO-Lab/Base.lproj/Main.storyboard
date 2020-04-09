@@ -85,6 +85,7 @@
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-DN-bqI">
                                 <rect key="frame" x="83" y="259" width="248" height="32"/>
+                                <color key="backgroundColor" red="0.76070749940000004" green="0.87012224739999999" blue="0.65597655789999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <segments>
                                     <segment title="Request"/>
                                     <segment title="Deposit"/>
@@ -100,6 +101,12 @@
                                     <action selector="completeTransactionPressed:" destination="c2E-H0-lc6" eventType="touchUpInside" id="M6i-3a-KOa"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="d4u-FL-owN">
+                                <rect key="frame" x="131.5" y="440" width="151" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d4u-FL-owN" secondAttribute="height" multiplier="151:128" id="SM4-OJ-sXN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -109,9 +116,12 @@
                             <constraint firstItem="oPB-Eq-jtR" firstAttribute="centerX" secondItem="N5Y-t1-cdD" secondAttribute="centerX" id="7zY-2Q-XAN"/>
                             <constraint firstItem="kuw-tG-W4h" firstAttribute="top" secondItem="MsW-Xd-IK5" secondAttribute="bottom" constant="20" id="FAb-b0-Hhy"/>
                             <constraint firstItem="oPB-Eq-jtR" firstAttribute="width" secondItem="N5Y-t1-cdD" secondAttribute="width" multiplier="0.5" id="Jac-Jp-mTC"/>
+                            <constraint firstItem="d4u-FL-owN" firstAttribute="width" secondItem="N5Y-t1-cdD" secondAttribute="width" multiplier="0.364734" id="K5V-QU-V2z"/>
                             <constraint firstItem="gXf-DN-bqI" firstAttribute="centerX" secondItem="N5Y-t1-cdD" secondAttribute="centerX" id="bRd-6i-g7W"/>
                             <constraint firstItem="gXf-DN-bqI" firstAttribute="top" secondItem="kuw-tG-W4h" secondAttribute="bottom" constant="40" id="dRj-gb-bDh"/>
                             <constraint firstItem="kuw-tG-W4h" firstAttribute="width" secondItem="N5Y-t1-cdD" secondAttribute="width" multiplier="0.3" id="dTk-xK-Txc"/>
+                            <constraint firstItem="d4u-FL-owN" firstAttribute="top" secondItem="oPB-Eq-jtR" secondAttribute="bottom" constant="80" id="jXI-cf-FdC"/>
+                            <constraint firstItem="d4u-FL-owN" firstAttribute="centerX" secondItem="N5Y-t1-cdD" secondAttribute="centerX" id="pMh-1b-tqr"/>
                             <constraint firstItem="kuw-tG-W4h" firstAttribute="centerX" secondItem="N5Y-t1-cdD" secondAttribute="centerX" id="vWb-th-6KE"/>
                             <constraint firstItem="gXf-DN-bqI" firstAttribute="width" secondItem="N5Y-t1-cdD" secondAttribute="width" multiplier="0.6" id="x9Y-DX-gaQ"/>
                             <constraint firstItem="x7T-oQ-5kh" firstAttribute="trailing" secondItem="MsW-Xd-IK5" secondAttribute="trailing" constant="20" id="xuR-k1-GTQ"/>
@@ -125,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGf-kL-Dbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2264" y="369"/>
+            <point key="canvasLocation" x="2263.768115942029" y="368.97321428571428"/>
         </scene>
         <!--Profile-->
         <scene sceneID="R3D-ze-Z5k">
