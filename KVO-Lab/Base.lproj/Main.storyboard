@@ -145,25 +145,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAV-NZ-Yzl">
-                                <rect key="frame" x="20" y="183" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAV-NZ-Yzl">
+                                <rect key="frame" x="20" y="180" width="374" height="37"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Account Balance " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqb-Ye-Zc3">
-                                <rect key="frame" x="20" y="225" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance $ " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqb-Ye-Zc3">
+                                <rect key="frame" x="20" y="227" width="374" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXy-Zq-KaT">
+                                <rect key="frame" x="20" y="275" width="374" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="4hh-w5-VKL">
+                                <rect key="frame" x="87" y="340.5" width="240" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4hh-w5-VKL" secondAttribute="height" multiplier="48:43" id="2aT-y4-IvC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cqb-Ye-Zc3" firstAttribute="leading" secondItem="gAC-iH-p7N" secondAttribute="leading" constant="20" id="24M-3i-Z71"/>
+                            <constraint firstItem="gAC-iH-p7N" firstAttribute="trailing" secondItem="rAV-NZ-Yzl" secondAttribute="trailing" constant="20" id="Aam-Eh-MhT"/>
+                            <constraint firstItem="cqb-Ye-Zc3" firstAttribute="top" secondItem="rAV-NZ-Yzl" secondAttribute="bottom" constant="10" id="Hmi-0z-3TC"/>
+                            <constraint firstItem="gAC-iH-p7N" firstAttribute="trailing" secondItem="cqb-Ye-Zc3" secondAttribute="trailing" constant="20" id="NzR-g6-Xe2"/>
+                            <constraint firstItem="4hh-w5-VKL" firstAttribute="centerY" secondItem="cWI-Wf-ugg" secondAttribute="centerY" id="PJT-2L-vKn"/>
+                            <constraint firstItem="gAC-iH-p7N" firstAttribute="trailing" secondItem="pXy-Zq-KaT" secondAttribute="trailing" constant="20" id="PtF-94-xpb"/>
+                            <constraint firstItem="rAV-NZ-Yzl" firstAttribute="leading" secondItem="gAC-iH-p7N" secondAttribute="leading" constant="20" id="Y1z-Dc-XHx"/>
+                            <constraint firstItem="4hh-w5-VKL" firstAttribute="centerX" secondItem="cWI-Wf-ugg" secondAttribute="centerX" id="Yrt-vm-qvz"/>
+                            <constraint firstItem="pXy-Zq-KaT" firstAttribute="leading" secondItem="gAC-iH-p7N" secondAttribute="leading" constant="20" id="aRd-bP-MAG"/>
+                            <constraint firstItem="rAV-NZ-Yzl" firstAttribute="top" secondItem="gAC-iH-p7N" secondAttribute="top" constant="40" id="dd7-Hh-aiP"/>
+                            <constraint firstItem="pXy-Zq-KaT" firstAttribute="top" secondItem="cqb-Ye-Zc3" secondAttribute="bottom" constant="5" id="vzG-CJ-tzf"/>
+                            <constraint firstItem="4hh-w5-VKL" firstAttribute="width" secondItem="cWI-Wf-ugg" secondAttribute="width" multiplier="0.57971" id="yr1-w5-jiP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gAC-iH-p7N"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="rmG-Ff-6XO"/>
+                    <connections>
+                        <outlet property="balanceLabel" destination="cqb-Ye-Zc3" id="gLL-5r-hrv"/>
+                        <outlet property="helloLabel" destination="rAV-NZ-Yzl" id="mZS-bi-wEo"/>
+                        <outlet property="moneyImage" destination="4hh-w5-VKL" id="12h-b0-6kb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dot-JW-Jjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -284,11 +313,11 @@
             </objects>
             <point key="canvasLocation" x="476.81159420289856" y="367.63392857142856"/>
         </scene>
-        <!--Users-->
+        <!--Current User-->
         <scene sceneID="jJj-P4-CHv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVA-Nl-B7H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Users" image="person.3" catalog="system" id="pSe-rb-hij"/>
+                    <tabBarItem key="tabBarItem" title="Current User" image="person" catalog="system" id="pSe-rb-hij"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="GTH-eE-7hQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -308,6 +337,6 @@
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
         <image name="money" width="800" height="800"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
-        <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>

@@ -10,13 +10,52 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var helloLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var moneyImage: UIImageView!
+    
+    private var users = [User]()
+    
+    private var currentUser: User? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    private var usersListObservation: NSKeyValueObservation?
+    private var currentUserBalanceObservation: NSKeyValueObservation?
+    
+    
     // set up profile like with an observer that observes if a new account was made and displays the most current account info
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.7329923511, green: 0.874386847, blue: 0.6325605512, alpha: 1)
+        view.backgroundColor = .white
+        updateUI()
+        configureUsersObservation()
+        configureBalancObservation()
     }
     
+    private func updateUI() {
+        helloLabel.text = "Hello \(currentUser?.name ?? "")"
+        balanceLabel.text = "$\(currentUser?.accountBalance ?? 0.0)"
+    }
+    
+    private func configureUsersObservation() {
+        usersListObservation = Accounts.shared.observe(\.users, options: [.new, .old], changeHandler: { [weak self] (account, change) in
+            guard let users = change.newValue else {return}
+            self?.users = users
+            self?.currentUser = users.last // most recently made account
+        })
+    }
+    
+    private func configureBalancObservation() {
+        
+        currentUserBalanceObservation = Accounts.shared.users.last?.observe(\.accountBalance, options: [.new, .old], changeHandler: { (user, change) in
+            guard let _ = change.newValue else { return }
+            self.currentUser = user
+        })
+    }
 
-
+    
 }
