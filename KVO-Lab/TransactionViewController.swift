@@ -40,19 +40,13 @@ class TransactionViewController: UIViewController {
         guard let index = currentIndex else { fatalError("no index passed") }
         // change the user array using the passed indexpath.row
         if transactionType == .deposit {
-             print("deposit")
             // increase balance amount for selected user
-            Accounts.shared.users[index].accountBalance += amount //1.0 // this change should trigger the observer
-            // decrease balance amount for last created user
-            //Accounts.shared.users.last?.accountBalance -= amount
-            
+            Accounts.shared.users[index].accountBalance += amount //1.0 // this change should trigger the user observer
+
         }
         else {
-            print("request")
             // decrease balance amount for selected user
-            Accounts.shared.users[index].accountBalance -= amount //1.0 // this change should trigger the observer
-            // increase balance amount for last created user (aka requesting user)
-            // Accounts.shared.users.last?.accountBalance += amount
+            Accounts.shared.users[index].accountBalance -= amount //1.0 // this change should trigger the user observer
             
         }
         
